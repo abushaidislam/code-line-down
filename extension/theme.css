@@ -1,83 +1,117 @@
 /**
- * Lovable Powerkits — extension theme (matches landing indigo/slate)
- * Dark by default; light via body.sp-light / #ql-floating.ql-light
+ * Unlimited Lovable — extension theme
+ * Inspired by Lovable's warm cream / charcoal design system.
+ * Cream by default; dark variant via body.sp-dark / #ql-floating.ql-dark
  */
-:root {
-  color-scheme: dark;
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 
-  --ql-bg: hsl(222, 47%, 4%);
-  --ql-bg-elevated: rgba(15, 23, 42, 0.75);
-  --ql-bg-surface: rgba(15, 23, 42, 0.45);
-  --ql-bg-hover: rgba(30, 41, 59, 0.8);
-  --ql-border: hsla(263, 90%, 75%, 0.15);
-  --ql-border-hover: hsla(263, 90%, 75%, 0.35);
-  --ql-text-primary: hsl(210, 40%, 98%);
-  --ql-text-secondary: hsl(215, 20.2%, 65.1%);
-  --ql-text-muted: hsl(217.9, 10.6%, 44.9%);
-  --ql-accent: #a855f7;
-  --ql-accent-hover: #ec4899;
-  --ql-accent-glow: rgba(168, 85, 247, 0.4);
-  --ql-accent-subtle: rgba(168, 85, 247, 0.15);
-  --ql-link: #ec4899;
-  --ql-gradient-primary: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
-  --ql-gradient-shimmer: linear-gradient(90deg, #a855f7, #ec4899, #f59e0b);
-  --ql-success: #22c55e;
-  --ql-success-bg: rgba(34, 197, 94, 0.12);
-  --ql-warning: #fbbf24;
-  --ql-warning-bg: rgba(251, 191, 36, 0.12);
-  --ql-danger: #ef4444;
-  --ql-danger-bg: rgba(239, 68, 68, 0.12);
-  --ql-radius: 28px;
-  --ql-radius-sm: 14px;
-  --ql-radius-xs: 8px;
-  --ql-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-  --ql-shadow-hover: 0 30px 60px rgba(0, 0, 0, 0.6);
-  --ql-transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  --ql-glass: rgba(15, 23, 42, 0.45);
-  --ql-overlay: rgba(3, 5, 12, 0.82);
-  --ql-modal-bg: #0b0f19;
-  --ql-modal-surface: #0e1424;
-  --ql-chat-bubble-end: #a855f7;
+:root {
+  color-scheme: light;
+
+  /* Warm cream foundation */
+  --ql-bg: #f7f4ed;
+  --ql-bg-elevated: #f7f4ed;
+  --ql-bg-surface: #fcfbf8;
+  --ql-bg-hover: rgba(28, 28, 28, 0.04);
+
+  /* Warm neutral borders — no cold gray */
+  --ql-border: #eceae4;
+  --ql-border-hover: rgba(28, 28, 28, 0.4);
+
+  /* Opacity-derived charcoal scale */
+  --ql-text-primary: #1c1c1c;
+  --ql-text-secondary: rgba(28, 28, 28, 0.82);
+  --ql-text-muted: #5f5f5d;
+
+  /* Charcoal as accent (Lovable uses black CTAs, not colored gradients) */
+  --ql-accent: #1c1c1c;
+  --ql-accent-hover: #000000;
+  --ql-accent-glow: rgba(28, 28, 28, 0.12);
+  --ql-accent-subtle: rgba(28, 28, 28, 0.04);
+  --ql-link: #1c1c1c;
+
+  /* Kept as gradient tokens for legacy component references,
+     but tuned to warm sunset wash instead of purple/pink */
+  --ql-gradient-primary: linear-gradient(135deg, #1c1c1c 0%, #3a3a3a 100%);
+  --ql-gradient-shimmer: linear-gradient(90deg, #f2c9a1, #e8a2a2, #b8c9e8);
+
+  --ql-success: #2f6b3a;
+  --ql-success-bg: rgba(47, 107, 58, 0.1);
+  --ql-warning: #a86414;
+  --ql-warning-bg: rgba(168, 100, 20, 0.1);
+  --ql-danger: #a83232;
+  --ql-danger-bg: rgba(168, 50, 50, 0.1);
+
+  /* Radius scale from Lovable spec */
+  --ql-radius: 16px;
+  --ql-radius-sm: 12px;
+  --ql-radius-xs: 6px;
+  --ql-radius-pill: 9999px;
+
+  /* Warm, diffused shadows — soft glow, not hard drop */
+  --ql-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --ql-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --ql-shadow-inset: rgba(255,255,255,0.2) 0 0.5px 0 0 inset, rgba(0,0,0,0.2) 0 0 0 0.5px inset, rgba(0,0,0,0.05) 0 1px 2px 0;
+
+  --ql-transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --ql-glass: rgba(247, 244, 237, 0.9);
+  --ql-overlay: rgba(28, 28, 28, 0.45);
+  --ql-modal-bg: #f7f4ed;
+  --ql-modal-surface: #fcfbf8;
+  --ql-chat-bubble-end: #1c1c1c;
 }
 
+/* Dark variant (opt-in) — warm charcoal, not cold slate */
+body.sp-dark,
+#ql-floating.ql-dark {
+  color-scheme: dark;
+
+  --ql-bg: #1c1c1c;
+  --ql-bg-elevated: #262626;
+  --ql-bg-surface: #222222;
+  --ql-bg-hover: rgba(252, 251, 248, 0.06);
+  --ql-border: rgba(252, 251, 248, 0.1);
+  --ql-border-hover: rgba(252, 251, 248, 0.35);
+  --ql-text-primary: #fcfbf8;
+  --ql-text-secondary: rgba(252, 251, 248, 0.82);
+  --ql-text-muted: rgba(252, 251, 248, 0.55);
+  --ql-accent: #fcfbf8;
+  --ql-accent-hover: #ffffff;
+  --ql-accent-glow: rgba(252, 251, 248, 0.15);
+  --ql-accent-subtle: rgba(252, 251, 248, 0.08);
+  --ql-link: #fcfbf8;
+  --ql-gradient-primary: linear-gradient(135deg, #fcfbf8 0%, #e8e5dd 100%);
+  --ql-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --ql-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --ql-glass: rgba(28, 28, 28, 0.92);
+  --ql-overlay: rgba(0, 0, 0, 0.6);
+  --ql-modal-bg: #1c1c1c;
+  --ql-modal-surface: #262626;
+  --ql-chat-bubble-end: #fcfbf8;
+}
+
+/* Legacy light-mode aliases — kept so any code toggling .sp-light still works */
 body.sp-light,
 #ql-floating.ql-light {
   color-scheme: light;
-
-  --ql-bg: #f8fafc;
-  --ql-bg-elevated: #ffffff;
-  --ql-bg-surface: #f1f5f9;
-  --ql-bg-hover: #e2e8f0;
-  --ql-border: rgba(15, 23, 42, 0.1);
-  --ql-border-hover: rgba(0, 168, 232, 0.35);
-  --ql-text-primary: #0f172a;
-  --ql-text-secondary: #475569;
-  --ql-text-muted: #64748b;
-  --ql-accent: #00a8e8;
-  --ql-accent-hover: #0072ff;
-  --ql-accent-glow: rgba(0, 168, 232, 0.22);
-  --ql-accent-subtle: rgba(0, 168, 232, 0.1);
-  --ql-link: #0072ff;
-  --ql-gradient-primary: linear-gradient(135deg, #00d2ff 0%, #00a8e8 50%, #0072ff 100%);
-  --ql-gradient-shimmer: linear-gradient(90deg, #00d2ff, #00a8e8, #0072ff);
-  --ql-shadow: 0 16px 48px rgba(15, 23, 42, 0.08);
-  --ql-shadow-hover: 0 24px 64px rgba(15, 23, 42, 0.12);
-  --ql-glass: rgba(255, 255, 255, 0.92);
-  --ql-overlay: rgba(15, 23, 42, 0.4);
-  --ql-modal-bg: #ffffff;
-  --ql-modal-surface: #f8fafc;
-  --ql-chat-bubble-end: #00a8e8;
 }
 
-/* Side panel ambient background */
-body:not(.sp-light) {
+/* Global type: humanist warm sans, mimicking Camera Plain */
+html, body {
+  font-family: 'Instrument Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-feature-settings: "ss01", "cv11";
+  letter-spacing: -0.005em;
+}
+
+/* Side panel ambient background — soft warm wash */
+body:not(.sp-dark) {
   background:
-    radial-gradient(circle at 12% -10%, rgba(0, 210, 255, 0.18), transparent 45%),
-    radial-gradient(circle at 88% 85%, rgba(0, 114, 255, 0.14), transparent 45%),
+    radial-gradient(circle at 12% -10%, rgba(232, 162, 162, 0.18), transparent 55%),
+    radial-gradient(circle at 88% 90%, rgba(184, 201, 232, 0.14), transparent 55%),
     var(--ql-bg);
 }
 
-body.sp-light {
+body.sp-dark {
   background: var(--ql-bg);
 }
 
@@ -95,6 +129,7 @@ body.sp-light {
 #ql-floating.ql-light .ql-brand { color: var(--ql-text-primary); }
 #ql-floating.ql-light .ql-pkg-card { box-shadow: var(--ql-shadow); }
 #ql-floating.ql-light .ql-trial-bar { background: var(--ql-bg-hover); }
+
 
 /* Shared component tokens */
 .pk-discord-cta {
