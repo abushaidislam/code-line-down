@@ -3,7 +3,7 @@
  * Inspired by Lovable's warm cream / charcoal design system.
  * Cream by default; dark variant via body.sp-dark / #ql-floating.ql-dark
  */
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap');
 
 :root {
   color-scheme: light;
