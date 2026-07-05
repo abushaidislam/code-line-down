@@ -2382,3 +2382,166 @@
   color: var(--ql-bg-surface) !important;
   box-shadow: var(--ql-shadow-inset) !important;
 }
+
+/* ============================================================
+   LOVABLE POLISH LAYER — Floating widget on lovable.dev pages
+   Cream editorial by default; keeps dark override intact.
+   ============================================================ */
+
+#ql-floating.ql-light,
+#ql-floating:not(.ql-dark) {
+  background: var(--ql-bg) !important;
+  border: 1px solid var(--ql-border) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+#ql-floating.ql-light:hover,
+#ql-floating:not(.ql-dark):hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.04) !important;
+}
+
+/* Header on light */
+#ql-floating.ql-light #ql-header,
+#ql-floating:not(.ql-dark) #ql-header {
+  background: transparent !important;
+  border-bottom: 1px solid var(--ql-border) !important;
+  padding: 12px 14px !important;
+}
+
+/* Brand — serif accent */
+#ql-floating.ql-light .ql-brand,
+#ql-floating:not(.ql-dark) .ql-brand {
+  font-family: 'Instrument Serif', ui-serif, Georgia, serif !important;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  letter-spacing: -0.01em !important;
+  color: var(--ql-text-primary) !important;
+}
+
+/* Icon buttons */
+#ql-floating.ql-light .ql-icon-btn,
+#ql-floating:not(.ql-dark) .ql-icon-btn {
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  color: var(--ql-text-secondary) !important;
+  border-radius: 6px !important;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease !important;
+}
+#ql-floating.ql-light .ql-icon-btn:hover,
+#ql-floating:not(.ql-dark) .ql-icon-btn:hover {
+  background: var(--ql-bg-hover) !important;
+  border-color: var(--ql-border) !important;
+  color: var(--ql-text-primary) !important;
+}
+
+/* Primary button — signature inset shadow */
+#ql-floating.ql-light .ql-btn-primary,
+#ql-floating.ql-light button.ql-primary,
+#ql-floating:not(.ql-dark) .ql-btn-primary,
+#ql-floating:not(.ql-dark) button.ql-primary {
+  background: var(--ql-text-primary) !important;
+  background-image: none !important;
+  color: #fcfbf8 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  padding: 8px 16px !important;
+  font-weight: 500 !important;
+  box-shadow: var(--ql-shadow-inset) !important;
+  transition: background 0.15s ease !important;
+}
+#ql-floating.ql-light .ql-btn-primary:hover,
+#ql-floating:not(.ql-dark) .ql-btn-primary:hover {
+  background: #000 !important;
+  transform: none !important;
+}
+
+/* Secondary / ghost */
+#ql-floating.ql-light .ql-btn-secondary,
+#ql-floating:not(.ql-dark) .ql-btn-secondary,
+#ql-floating.ql-light .ql-btn-ghost,
+#ql-floating:not(.ql-dark) .ql-btn-ghost {
+  background: transparent !important;
+  color: var(--ql-text-primary) !important;
+  border: 1px solid rgba(28,28,28,0.4) !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+}
+#ql-floating.ql-light .ql-btn-secondary:hover,
+#ql-floating:not(.ql-dark) .ql-btn-secondary:hover {
+  background: var(--ql-bg-hover) !important;
+}
+
+/* Textareas / inputs */
+#ql-floating.ql-light textarea,
+#ql-floating.ql-light input[type="text"],
+#ql-floating.ql-light input[type="password"],
+#ql-floating:not(.ql-dark) textarea,
+#ql-floating:not(.ql-dark) input[type="text"],
+#ql-floating:not(.ql-dark) input[type="password"] {
+  background: var(--ql-bg-surface) !important;
+  color: var(--ql-text-primary) !important;
+  border: 1px solid var(--ql-border) !important;
+  border-radius: 8px !important;
+}
+#ql-floating.ql-light textarea:focus,
+#ql-floating:not(.ql-dark) textarea:focus,
+#ql-floating.ql-light input:focus,
+#ql-floating:not(.ql-dark) input:focus {
+  border-color: rgba(28,28,28,0.4) !important;
+  box-shadow: 0 0 0 3px rgba(28,28,28,0.06) !important;
+  outline: none !important;
+}
+
+/* Package cards / feature cards */
+#ql-floating.ql-light .ql-pkg-card,
+#ql-floating:not(.ql-dark) .ql-pkg-card,
+#ql-floating.ql-light .ql-card,
+#ql-floating:not(.ql-dark) .ql-card {
+  background: var(--ql-bg-surface) !important;
+  border: 1px solid var(--ql-border) !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+  transition: border-color 0.15s ease !important;
+}
+#ql-floating.ql-light .ql-pkg-card:hover,
+#ql-floating:not(.ql-dark) .ql-pkg-card:hover {
+  border-color: var(--ql-border-hover) !important;
+}
+
+/* Tabs — active is charcoal pill with inset */
+#ql-floating.ql-light .ql-tab,
+#ql-floating:not(.ql-dark) .ql-tab {
+  background: transparent !important;
+  color: var(--ql-text-muted) !important;
+  border-radius: 6px !important;
+  padding: 6px 12px !important;
+  font-weight: 500 !important;
+}
+#ql-floating.ql-light .ql-tab.ql-tab-active,
+#ql-floating.ql-light .ql-tab.active,
+#ql-floating:not(.ql-dark) .ql-tab.ql-tab-active,
+#ql-floating:not(.ql-dark) .ql-tab.active {
+  background: var(--ql-text-primary) !important;
+  color: #fcfbf8 !important;
+  box-shadow: var(--ql-shadow-inset) !important;
+}
+
+/* Trial bar — no shimmer on cream */
+#ql-floating.ql-light .ql-trial-bar,
+#ql-floating:not(.ql-dark) .ql-trial-bar {
+  background: rgba(28,28,28,0.06) !important;
+}
+#ql-floating.ql-light .ql-trial-bar-fill,
+#ql-floating:not(.ql-dark) .ql-trial-bar-fill {
+  background: var(--ql-text-primary) !important;
+  background-image: none !important;
+  animation: none !important;
+}
+
+/* Scrollbar */
+#ql-floating:not(.ql-dark)::-webkit-scrollbar { width: 6px; }
+#ql-floating:not(.ql-dark)::-webkit-scrollbar-thumb {
+  background: rgba(28,28,28,0.15); border-radius: 3px;
+}

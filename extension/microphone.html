@@ -3,94 +3,136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Microphone Access - Unlimited Lovable</title>
+  <title>Microphone Access — Unlimited Lovable</title>
   <link rel="stylesheet" href="theme.css">
   <style>
+    :root {
+      --cream: #f7f4ed;
+      --cream-soft: #fcfbf8;
+      --ink: #1c1c1c;
+      --line: #eceae4;
+      --muted: #5f5f5d;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      background: #0B0F17;
-      color: #F8FAFC;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at 15% -10%, rgba(232,162,162,0.18), transparent 55%),
+        radial-gradient(circle at 85% 110%, rgba(184,201,232,0.14), transparent 60%),
+        var(--cream);
+      color: var(--ink);
+      font-family: 'Instrument Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
       display: flex;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      margin: 0;
-      overflow: hidden;
+      padding: 24px;
+      letter-spacing: -0.005em;
     }
     .container {
-      background: rgba(30, 41, 59, 0.4);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 24px;
-      padding: 40px;
+      background: var(--cream-soft);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 40px 36px;
       text-align: center;
       max-width: 420px;
       width: 100%;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-      position: relative;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
     }
     .mic-icon {
-      font-size: 64px;
-      margin-bottom: 24px;
-      display: inline-block;
-      animation: pulse 2s infinite;
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: var(--ink);
+      color: var(--cream-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow:
+        rgba(255,255,255,0.2) 0 0.5px 0 0 inset,
+        rgba(0,0,0,0.2) 0 0 0 0.5px inset,
+        rgba(0,0,0,0.05) 0 1px 2px 0;
     }
+    .mic-icon svg { width: 24px; height: 24px; }
     h1 {
-      font-size: 22px;
-      font-weight: 700;
-      margin: 0 0 12px 0;
-      background: linear-gradient(135deg, #a855f7, #ec4899);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-family: 'Instrument Serif', ui-serif, Georgia, serif;
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+      color: var(--ink);
+    }
+    h1 em {
+      font-style: italic;
+      color: var(--muted);
+      font-weight: 400;
     }
     p {
-      color: #94A3B8;
+      color: var(--muted);
       font-size: 14px;
-      line-height: 1.6;
-      margin: 0 0 30px 0;
+      line-height: 1.55;
+      margin-bottom: 28px;
     }
     .btn {
-      background: linear-gradient(135deg, #a855f7, #ec4899);
+      background: var(--ink);
       border: none;
-      color: #fff;
-      padding: 12px 30px;
-      font-size: 15px;
-      font-weight: 600;
-      border-radius: 50px;
+      color: var(--cream-soft);
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: inherit;
+      letter-spacing: -0.005em;
+      border-radius: 6px;
       cursor: pointer;
-      box-shadow: 0 4px 14px rgba(168, 85, 247, 0.4);
-      transition: all 0.2s ease;
+      box-shadow:
+        rgba(255,255,255,0.2) 0 0.5px 0 0 inset,
+        rgba(0,0,0,0.2) 0 0 0 0.5px inset,
+        rgba(0,0,0,0.05) 0 1px 2px 0;
+      transition: background 0.15s ease;
     }
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(168, 85, 247, 0.6);
+    .btn:hover { background: #000; }
+    .btn:focus-visible {
+      outline: none;
+      box-shadow:
+        rgba(255,255,255,0.2) 0 0.5px 0 0 inset,
+        rgba(0,0,0,0.2) 0 0 0 0.5px inset,
+        rgba(0,0,0,0.05) 0 1px 2px 0,
+        0 0 0 3px rgba(28,28,28,0.12);
     }
     .status {
-      font-weight: 600;
-      margin-top: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      margin-top: 18px;
       display: none;
     }
-    .status.success {
-      color: #10B981;
-    }
-    .status.error {
-      color: #EF4444;
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.1); opacity: 0.8; }
-      100% { transform: scale(1); opacity: 1; }
+    .status.success { color: #2f6b3a; display: block; }
+    .status.error   { color: #a83232; display: block; }
+    .brand-mark {
+      margin-top: 24px;
+      font-family: 'Instrument Serif', ui-serif, Georgia, serif;
+      font-style: italic;
+      font-size: 12px;
+      color: var(--muted);
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="mic-icon">🎙️</div>
-    <h1>Allow Microphone Access</h1>
-    <p>Unlimited Lovable requires microphone access to support voice typing and speech-to-text. Please click the button below and allow the permission request.</p>
-    <button class="btn" id="request-btn">Grant Permission</button>
+  <main class="container">
+    <div class="mic-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+        <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+        <line x1="12" y1="19" x2="12" y2="23"/>
+        <line x1="8" y1="23" x2="16" y2="23"/>
+      </svg>
+    </div>
+    <h1>Allow <em>microphone</em> access</h1>
+    <p>Unlimited Lovable uses your microphone for voice typing and speech-to-text. Grant permission once and we'll remember it.</p>
+    <button class="btn" id="request-btn">Grant permission</button>
     <div class="status" id="status-message"></div>
-  </div>
+    <div class="brand-mark">by Faris Automates</div>
+  </main>
   <script src="microphone.js"></script>
 </body>
 </html>

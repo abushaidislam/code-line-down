@@ -724,3 +724,211 @@ body {
 
 /* Ambient orbs / meteors — soften on cream */
 .sp-orb, .sp-meteors, .sp-grid { opacity: 0.4 !important; mix-blend-mode: multiply !important; }
+
+/* ============================================================
+   LOVABLE POLISH LAYER — Editorial cream, restraint over sparkle
+   Applied last so it wins the cascade against dark-mode fallbacks.
+   ============================================================ */
+
+/* Kill the ambient sparkle — Lovable is calm, not a game HUD */
+body:not(.sp-dark) .sp-ambience,
+body:not(.sp-dark) .sp-orb,
+body:not(.sp-dark) .sp-meteors,
+body:not(.sp-dark) .sp-grid,
+body:not(.sp-dark) .sp-border-beam-container {
+  display: none !important;
+}
+
+/* Softer cream body */
+body:not(.sp-dark) {
+  background:
+    radial-gradient(circle at 15% -10%, rgba(232,162,162,0.14), transparent 55%),
+    radial-gradient(circle at 85% 110%, rgba(184,201,232,0.12), transparent 60%),
+    var(--ql-bg) !important;
+}
+
+/* Card — hairline border, no shadow, no beam */
+body:not(.sp-dark) .sp-card {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Header — cream on cream, hairline underline */
+body:not(.sp-dark) .sp-header {
+  background: transparent !important;
+  border-bottom: 1px solid var(--ql-border) !important;
+  padding: 16px 18px !important;
+}
+body:not(.sp-dark) .sp-brand-text {
+  font-family: 'Instrument Serif', ui-serif, Georgia, serif !important;
+  font-weight: 400 !important;
+  font-size: 18px !important;
+  letter-spacing: -0.01em !important;
+  color: var(--ql-text-primary) !important;
+}
+body:not(.sp-dark) .sp-brand-subtitle {
+  color: var(--ql-text-muted) !important;
+  font-style: italic;
+}
+
+/* PRO / status badges — flat charcoal pill, no gradient */
+body:not(.sp-dark) .sp-pro-badge,
+body:not(.sp-dark) .sp-badge {
+  background: var(--ql-text-primary) !important;
+  color: #fcfbf8 !important;
+  border: none !important;
+  border-radius: 4px !important;
+  padding: 2px 6px !important;
+  font-size: 9px !important;
+  letter-spacing: 0.08em !important;
+  box-shadow: var(--ql-shadow-inset) !important;
+  background-image: none !important;
+  -webkit-text-fill-color: #fcfbf8 !important;
+}
+
+/* Icon buttons — outlined, warm, ghostly */
+body:not(.sp-dark) .sp-icon-btn {
+  background: transparent !important;
+  border: 1px solid var(--ql-border) !important;
+  border-radius: 6px !important;
+  color: var(--ql-text-secondary) !important;
+  width: 30px !important;
+  height: 30px !important;
+}
+body:not(.sp-dark) .sp-icon-btn:hover {
+  background: var(--ql-bg-hover) !important;
+  border-color: var(--ql-border-hover) !important;
+  color: var(--ql-text-primary) !important;
+}
+
+/* Primary CTA — signature Lovable inset shadow, sharp 6px radius */
+body:not(.sp-dark) .sp-btn-primary {
+  background: var(--ql-text-primary) !important;
+  background-image: none !important;
+  color: #fcfbf8 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  padding: 10px 16px !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.005em !important;
+  box-shadow: var(--ql-shadow-inset) !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+}
+body:not(.sp-dark) .sp-btn-primary:hover {
+  transform: none !important;
+  background: #000 !important;
+  box-shadow: var(--ql-shadow-inset), 0 4px 12px rgba(0,0,0,0.08) !important;
+}
+
+/* Ghost / secondary — Lovable's outlined pattern */
+body:not(.sp-dark) .sp-btn-purchase,
+body:not(.sp-dark) .sp-btn-secondary {
+  background: transparent !important;
+  color: var(--ql-text-primary) !important;
+  border: 1px solid rgba(28,28,28,0.4) !important;
+  border-radius: 6px !important;
+  padding: 10px 16px !important;
+  font-weight: 500 !important;
+  box-shadow: none !important;
+  -webkit-text-fill-color: var(--ql-text-primary) !important;
+}
+body:not(.sp-dark) .sp-btn-purchase:hover,
+body:not(.sp-dark) .sp-btn-secondary:hover {
+  background: var(--ql-bg-hover) !important;
+  border-color: var(--ql-text-primary) !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Inputs / textareas — cream surface, subtle border */
+body:not(.sp-dark) .sp-input,
+body:not(.sp-dark) .sp-textarea {
+  background: var(--ql-bg-surface) !important;
+  border: 1px solid var(--ql-border) !important;
+  border-radius: 8px !important;
+  color: var(--ql-text-primary) !important;
+}
+body:not(.sp-dark) .sp-input:focus,
+body:not(.sp-dark) .sp-textarea:focus {
+  border-color: rgba(28,28,28,0.4) !important;
+  box-shadow: 0 0 0 3px rgba(28,28,28,0.06) !important;
+}
+
+/* Profile cards, feature cards — flat cream with hairline */
+body:not(.sp-dark) .sp-profile-card,
+body:not(.sp-dark) .sp-card-item,
+body:not(.sp-dark) .sp-section-card {
+  background: var(--ql-bg-surface) !important;
+  border: 1px solid var(--ql-border) !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+}
+
+/* Section titles — serif accents */
+body:not(.sp-dark) .sp-gate-title,
+body:not(.sp-dark) .sp-section-title,
+body:not(.sp-dark) .sp-profile-name {
+  font-family: 'Instrument Serif', ui-serif, Georgia, serif !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.015em !important;
+  color: var(--ql-text-primary) !important;
+}
+
+/* Muted secondary text */
+body:not(.sp-dark) .sp-gate-desc,
+body:not(.sp-dark) .sp-countdown-label,
+body:not(.sp-dark) .sp-sync-status {
+  color: var(--ql-text-muted) !important;
+}
+
+/* Trial bar — cream track, charcoal fill (no rainbow shimmer) */
+body:not(.sp-dark) .sp-trial-bar {
+  background: rgba(28,28,28,0.06) !important;
+}
+body:not(.sp-dark) .sp-trial-bar-fill {
+  background: var(--ql-text-primary) !important;
+  background-image: none !important;
+  animation: none !important;
+}
+body:not(.sp-dark) .sp-trial-bar-fill.sp-bar-urgent {
+  background: #a83232 !important;
+}
+
+/* Footer + support links */
+body:not(.sp-dark) .sp-footer {
+  background: transparent !important;
+  border-top: 1px solid var(--ql-border) !important;
+}
+body:not(.sp-dark) .sp-support-link {
+  color: var(--ql-text-muted) !important;
+  transition: color 0.15s ease;
+}
+body:not(.sp-dark) .sp-support-link:hover {
+  color: var(--ql-text-primary) !important;
+}
+
+/* Back-to-popup button */
+body:not(.sp-dark) .sp-back-to-popup {
+  background: transparent !important;
+  border: 1px solid var(--ql-border) !important;
+  color: var(--ql-text-secondary) !important;
+  border-radius: 6px !important;
+  padding: 4px 10px !important;
+  font-size: 11px !important;
+}
+body:not(.sp-dark) .sp-back-to-popup:hover {
+  background: var(--ql-bg-hover) !important;
+  color: var(--ql-text-primary) !important;
+}
+
+/* Scrollbar — barely there */
+body:not(.sp-dark) .sp-body::-webkit-scrollbar { width: 6px; }
+body:not(.sp-dark) .sp-body::-webkit-scrollbar-track { background: transparent; }
+body:not(.sp-dark) .sp-body::-webkit-scrollbar-thumb {
+  background: rgba(28,28,28,0.15);
+  border-radius: 3px;
+}
+body:not(.sp-dark) .sp-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(28,28,28,0.3);
+}
