@@ -1232,3 +1232,224 @@ body:not(.sp-dark) .sp-status-dot {
   background-color: #4a7c59 !important;
   box-shadow: 0 0 6px rgba(74,124,89,0.5) !important;
 }
+
+/* ============================================================
+   PROMPT-INPUT-BOX STYLE — pill composer, both themes
+   Reference: rounded-3xl dark card, chip toggles, circular send
+   ============================================================ */
+
+/* ---------- Shared shape (both themes) ---------- */
+.sp-textarea-wrapper {
+  border-radius: 24px !important;
+  padding: 14px 14px 12px 14px !important;
+  position: relative !important;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease !important;
+}
+.sp-textarea-wrapper textarea {
+  padding: 6px 4px !important;
+  min-height: 44px !important;
+  line-height: 1.5 !important;
+  resize: none !important;
+  font-family: inherit !important;
+}
+
+/* Move chips row from absolute-inside to a horizontal pill toolbar */
+.sp-chips-container {
+  position: static !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  overflow-x: auto !important;
+  scrollbar-width: none !important;
+  padding: 8px 0 0 0 !important;
+  margin: 8px -2px 0 -2px !important;
+}
+.sp-chips-container::-webkit-scrollbar { display: none !important; }
+
+/* Pill chip — rounded-full, icon+label, animates on active */
+.sp-input-chip {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  height: 28px !important;
+  padding: 0 10px !important;
+  border-radius: 9999px !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.005em !important;
+  border: 1px solid transparent !important;
+  cursor: pointer !important;
+  transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+}
+.sp-input-chip:hover { transform: none !important; }
+.sp-input-chip.active,
+.sp-input-chip[aria-pressed="true"],
+.sp-input-chip[data-active="true"] {
+  transform: scale(1.02) !important;
+}
+
+/* Remove textarea wrapper's old bottom padding hack (chips no longer absolute) */
+.sp-textarea-wrapper { padding-bottom: 12px !important; }
+
+/* ---------- LIGHT (Lovable cream) — pill composer ---------- */
+body:not(.sp-dark) .sp-textarea-wrapper {
+  background: var(--ql-bg-surface) !important;
+  border: 1px solid var(--ql-border) !important;
+  box-shadow: 0 1px 2px rgba(28,28,28,0.03), 0 8px 24px rgba(28,28,28,0.04) !important;
+}
+body:not(.sp-dark) .sp-textarea-wrapper:focus-within {
+  border-color: rgba(28,28,28,0.35) !important;
+  box-shadow: 0 0 0 3px rgba(28,28,28,0.06), 0 8px 24px rgba(28,28,28,0.06) !important;
+}
+body:not(.sp-dark) .sp-input-chip {
+  background: transparent !important;
+  border-color: var(--ql-border) !important;
+  color: var(--ql-text-secondary) !important;
+}
+body:not(.sp-dark) .sp-input-chip:hover {
+  background: var(--ql-bg-hover) !important;
+  border-color: rgba(28,28,28,0.25) !important;
+  color: var(--ql-text-primary) !important;
+}
+body:not(.sp-dark) .sp-input-chip.active,
+body:not(.sp-dark) .sp-input-chip[aria-pressed="true"],
+body:not(.sp-dark) .sp-input-chip[data-active="true"] {
+  background: var(--ql-text-primary) !important;
+  border-color: var(--ql-text-primary) !important;
+  color: #fcfbf8 !important;
+  box-shadow: var(--ql-shadow-inset) !important;
+}
+
+/* ---------- DARK (reference #1F2023 aesthetic) ---------- */
+body.sp-dark .sp-textarea-wrapper {
+  background: #1F2023 !important;
+  border: 1px solid #3a3a40 !important;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.35) !important;
+}
+body.sp-dark .sp-textarea-wrapper:focus-within {
+  border-color: #5a5a62 !important;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.45), 0 0 0 3px rgba(255,255,255,0.04) !important;
+}
+body.sp-dark .sp-textarea-wrapper textarea {
+  background: transparent !important;
+  color: #f3f4f6 !important;
+  font-size: 13.5px !important;
+}
+body.sp-dark .sp-textarea-wrapper textarea::placeholder {
+  color: #9CA3AF !important;
+}
+body.sp-dark .sp-textarea-shortcut {
+  background: rgba(255,255,255,0.06) !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  color: #9CA3AF !important;
+  border-radius: 4px !important;
+  font-size: 9px !important;
+  font-family: 'SF Mono', ui-monospace, monospace !important;
+}
+body.sp-dark .sp-input-chip {
+  background: transparent !important;
+  border-color: transparent !important;
+  color: #9CA3AF !important;
+}
+body.sp-dark .sp-input-chip:hover {
+  background: rgba(255,255,255,0.06) !important;
+  color: #D1D5DB !important;
+}
+body.sp-dark .sp-input-chip.active,
+body.sp-dark .sp-input-chip[aria-pressed="true"],
+body.sp-dark .sp-input-chip[data-active="true"] {
+  background: rgba(255,255,255,0.10) !important;
+  border-color: rgba(255,255,255,0.20) !important;
+  color: #fff !important;
+}
+
+/* ---------- Attach button (paperclip) — ghost circle in both modes ---------- */
+.sp-circle-action-btn {
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 9999px !important;
+}
+body:not(.sp-dark) .sp-circle-action-btn {
+  background: transparent !important;
+  border: none !important;
+  color: var(--ql-text-secondary) !important;
+}
+body:not(.sp-dark) .sp-circle-action-btn:hover {
+  background: var(--ql-bg-hover) !important;
+  color: var(--ql-text-primary) !important;
+}
+body.sp-dark .sp-circle-action-btn {
+  background: transparent !important;
+  border: none !important;
+  color: #9CA3AF !important;
+}
+body.sp-dark .sp-circle-action-btn:hover {
+  background: rgba(255,255,255,0.08) !important;
+  color: #D1D5DB !important;
+}
+
+/* ---------- Send circle — signature circular CTA ---------- */
+.sp-send-circle-btn {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 9999px !important;
+  font-weight: 700 !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease !important;
+}
+body:not(.sp-dark) .sp-send-circle-btn {
+  background: var(--ql-text-primary) !important;
+  background-image: none !important;
+  border: none !important;
+  color: #fcfbf8 !important;
+  box-shadow: var(--ql-shadow-inset), 0 4px 14px rgba(28,28,28,0.14) !important;
+}
+body:not(.sp-dark) .sp-send-circle-btn:hover {
+  background: #000 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: var(--ql-shadow-inset), 0 6px 18px rgba(28,28,28,0.20) !important;
+}
+body.sp-dark .sp-send-circle-btn {
+  background: #fff !important;
+  color: #1F2023 !important;
+  border: none !important;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.4) !important;
+}
+body.sp-dark .sp-send-circle-btn:hover {
+  background: rgba(255,255,255,0.85) !important;
+  transform: translateY(-1px) !important;
+}
+.sp-send-circle-btn:disabled {
+  opacity: 0.4 !important;
+  box-shadow: none !important;
+  transform: none !important;
+  cursor: not-allowed !important;
+}
+
+/* ---------- Chat action bar row — align to reference ---------- */
+.sp-chat-actions {
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+/* Attach preview thumbnails — rounded-xl like reference */
+.sp-attach-preview { gap: 8px !important; margin-bottom: 8px !important; }
+.sp-attach-item {
+  border-radius: 12px !important;
+  overflow: hidden !important;
+}
+.sp-attach-thumb {
+  width: 56px !important;
+  height: 56px !important;
+  border-radius: 10px !important;
+}
+.sp-attach-remove {
+  top: 4px !important;
+  right: 4px !important;
+  width: 18px !important;
+  height: 18px !important;
+  background: rgba(0,0,0,0.7) !important;
+  color: #fff !important;
+  opacity: 1 !important;
+}
