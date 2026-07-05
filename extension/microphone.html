@@ -12,6 +12,19 @@
       --ink: #1c1c1c;
       --line: #eceae4;
       --muted: #5f5f5d;
+      --btn-bg: #1c1c1c;
+      --btn-fg: #fcfbf8;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --cream: #1c1c1c;
+        --cream-soft: #262626;
+        --ink: #fcfbf8;
+        --line: rgba(252,251,248,0.12);
+        --muted: rgba(252,251,248,0.6);
+        --btn-bg: #fcfbf8;
+        --btn-fg: #1c1c1c;
+      }
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -43,8 +56,8 @@
       height: 56px;
       margin: 0 auto 20px;
       border-radius: 50%;
-      background: var(--ink);
-      color: var(--cream-soft);
+      background: var(--btn-bg);
+      color: var(--btn-fg);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -75,9 +88,9 @@
       margin-bottom: 28px;
     }
     .btn {
-      background: var(--ink);
+      background: var(--btn-bg);
       border: none;
-      color: var(--cream-soft);
+      color: var(--btn-fg);
       padding: 10px 20px;
       font-size: 14px;
       font-weight: 500;
@@ -91,7 +104,7 @@
         rgba(0,0,0,0.05) 0 1px 2px 0;
       transition: background 0.15s ease;
     }
-    .btn:hover { background: #000; }
+    .btn:hover { background: var(--btn-bg); filter: brightness(0.9); }
     .btn:focus-visible {
       outline: none;
       box-shadow:

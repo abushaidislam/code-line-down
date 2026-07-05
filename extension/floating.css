@@ -2545,3 +2545,13 @@
 #ql-floating:not(.ql-dark)::-webkit-scrollbar-thumb {
   background: rgba(28,28,28,0.15); border-radius: 3px;
 }
+
+/* Dark mode — kill rainbow shimmer, use cream fill on charcoal track */
+#ql-floating.ql-dark .ql-trial-bar {
+  background: rgba(252,251,248,0.08) !important;
+}
+#ql-floating.ql-dark .ql-trial-bar-fill {
+  background: var(--ql-text-primary) !important;
+  background-image: none !important;
+  animation: none !important;
+}
