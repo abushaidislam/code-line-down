@@ -1301,8 +1301,8 @@
   letter-spacing: 0.08em;
   white-space: nowrap;
 }
-.ql-pkg-brl .ql-pkg-price { color: #16a34a; }
-#ql-floating.ql-dark .ql-pkg-brl .ql-pkg-price { color: #4ade80; }
+.ql-pkg-brl .ql-pkg-price { color: var(--ql-success); }
+#ql-floating.ql-dark .ql-pkg-brl .ql-pkg-price { color: var(--ql-success); }
 .ql-pkg-duration {
   font-size: 11px;
   color: var(--ql-text-secondary);
@@ -1659,7 +1659,7 @@
 .ql-shield-btn.ql-shield-active {
   background: linear-gradient(135deg, rgba(52,211,153,0.12), rgba(52,211,153,0.06));
   border-color: rgba(52,211,153,0.3);
-  color: #34d399;
+  color: var(--ql-success);
 }
 .ql-shield-btn.ql-shield-active:hover {
   background: linear-gradient(135deg, rgba(52,211,153,0.18), rgba(52,211,153,0.1));
@@ -1927,7 +1927,7 @@
   0% { background-color: var(--ql-accent); }
   25% { background-color: var(--ql-danger); }
   50% { background-color: #22c55e; }
-  75% { background-color: #eab308; }
+  75% { background-color: var(--ql-warning); }
   100% { background-color: var(--ql-accent); }
 }
 #chatinput-send-message-button.ql-native-send-active {
@@ -2002,13 +2002,13 @@
 }
 .ql-native-toast-success {
   background: rgba(34, 197, 94, 0.15);
-  color: #34d399;
+  color: var(--ql-success);
   border: 1px solid rgba(34, 197, 94, 0.3);
   backdrop-filter: blur(12px);
 }
 .ql-native-toast-error {
   background: rgba(248, 113, 113, 0.15);
-  color: #f87171;
+  color: var(--ql-danger);
   border: 1px solid rgba(248, 113, 113, 0.3);
   backdrop-filter: blur(12px);
 }
