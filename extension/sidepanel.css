@@ -932,3 +932,303 @@ body:not(.sp-dark) .sp-body::-webkit-scrollbar-thumb {
 body:not(.sp-dark) .sp-body::-webkit-scrollbar-thumb:hover {
   background: rgba(28,28,28,0.3);
 }
+
+/* ============================================================
+   LOVABLE POLISH v2 — Welcome gate + Chat composer
+   Applied last so it wins the cascade.
+   ============================================================ */
+
+/* ---------- Welcome / License Gate ---------- */
+body:not(.sp-dark) .sp-license-gate {
+  padding: 44px 22px 36px !important;
+  max-width: 380px;
+  margin: 0 auto;
+  position: relative;
+}
+body:not(.sp-dark) .sp-license-gate::before {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 18px;
+  border-radius: 16px;
+  background: var(--ql-text-primary) url("assets/logo-master-lovable-square.png") center/32px no-repeat;
+  box-shadow: var(--ql-shadow-inset), 0 8px 24px rgba(28,28,28,0.10);
+}
+body:not(.sp-dark) .sp-gate-title {
+  font-family: 'Instrument Serif', ui-serif, Georgia, serif !important;
+  font-weight: 400 !important;
+  font-size: 28px !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.02em !important;
+  margin-bottom: 10px !important;
+  color: var(--ql-text-primary) !important;
+}
+body:not(.sp-dark) .sp-gate-desc {
+  font-size: 13px !important;
+  line-height: 1.55 !important;
+  color: var(--ql-text-muted) !important;
+  margin-bottom: 22px !important;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+body:not(.sp-dark) .sp-license-gate .sp-input {
+  text-align: center;
+  font-family: 'SF Mono', ui-monospace, Menlo, monospace !important;
+  letter-spacing: 0.04em !important;
+  border-radius: 8px !important;
+  padding: 12px 14px !important;
+}
+body:not(.sp-dark) .sp-license-gate .sp-btn-primary {
+  margin-top: 10px !important;
+  padding: 12px 16px !important;
+  font-size: 13px !important;
+  border-radius: 8px !important;
+}
+
+/* Dark mode gate hero */
+body.sp-dark .sp-license-gate::before {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 18px;
+  border-radius: 16px;
+  background: #fcfbf8 url("assets/logo-master-lovable-square.png") center/32px no-repeat;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+body.sp-dark .sp-gate-title {
+  font-family: 'Instrument Serif', ui-serif, Georgia, serif !important;
+  font-weight: 400 !important;
+  font-size: 28px !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* ---------- Chat Composer — Lovable editorial pill style ---------- */
+body:not(.sp-dark) .sp-chat-container {
+  padding: 4px 2px 10px !important;
+}
+
+/* Empty state — serif hero */
+body:not(.sp-dark) .sp-chat-empty {
+  padding: 48px 20px !important;
+}
+body:not(.sp-dark) .sp-chat-empty-icon {
+  font-size: 40px !important;
+  opacity: 0.6 !important;
+  margin-bottom: 14px !important;
+}
+body:not(.sp-dark) .sp-chat-empty-title {
+  font-family: 'Instrument Serif', ui-serif, Georgia, serif !important;
+  font-weight: 400 !important;
+  font-size: 22px !important;
+  letter-spacing: -0.015em !important;
+  color: var(--ql-text-primary) !important;
+  margin-bottom: 8px !important;
+}
+body:not(.sp-dark) .sp-chat-empty-desc {
+  font-size: 12px !important;
+  line-height: 1.55 !important;
+  color: var(--ql-text-muted) !important;
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+/* Chat bubbles — charcoal user, cream assistant */
+body:not(.sp-dark) .sp-chat-bubble {
+  background: var(--ql-text-primary) !important;
+  background-image: none !important;
+  color: #fcfbf8 !important;
+  border-radius: 14px 14px 4px 14px !important;
+  box-shadow: var(--ql-shadow-inset) !important;
+  font-size: 12.5px !important;
+  line-height: 1.55 !important;
+}
+body:not(.sp-dark) .sp-chat-bubble::after { display: none !important; }
+body:not(.sp-dark) .sp-chat-time,
+body:not(.sp-dark) .sp-chat-check { color: rgba(252,251,248,0.55) !important; }
+
+/* Composer wrapper — soft cream card with hairline */
+body:not(.sp-dark) .sp-textarea-wrapper {
+  background: var(--ql-bg-surface) !important;
+  border: 1px solid var(--ql-border) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 2px 8px rgba(28,28,28,0.03) !important;
+  padding: 14px 14px 48px 14px !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+body:not(.sp-dark) .sp-textarea-wrapper:focus-within {
+  border-color: rgba(28,28,28,0.35) !important;
+  box-shadow: 0 0 0 3px rgba(28,28,28,0.05), 0 4px 14px rgba(28,28,28,0.05) !important;
+}
+body:not(.sp-dark) .sp-textarea-wrapper textarea {
+  background: transparent !important;
+  color: var(--ql-text-primary) !important;
+  font-size: 13.5px !important;
+  font-family: inherit !important;
+  line-height: 1.5 !important;
+  min-height: 48px !important;
+}
+body:not(.sp-dark) .sp-textarea-wrapper textarea::placeholder {
+  color: var(--ql-text-muted) !important;
+  font-style: italic;
+}
+body:not(.sp-dark) .sp-textarea-shortcut {
+  background: var(--ql-bg) !important;
+  border: 1px solid var(--ql-border) !important;
+  color: var(--ql-text-muted) !important;
+  border-radius: 4px !important;
+  font-family: 'SF Mono', ui-monospace, monospace !important;
+  font-size: 9px !important;
+  padding: 2px 5px !important;
+}
+
+/* Suggestion chips — pill toggles, Lovable outlined */
+body:not(.sp-dark) .sp-input-chip {
+  background: transparent !important;
+  border: 1px solid var(--ql-border) !important;
+  color: var(--ql-text-secondary) !important;
+  border-radius: 9999px !important;
+  padding: 4px 10px !important;
+  font-size: 10.5px !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.005em !important;
+  transition: all 0.15s ease !important;
+}
+body:not(.sp-dark) .sp-input-chip:hover {
+  background: var(--ql-text-primary) !important;
+  border-color: var(--ql-text-primary) !important;
+  color: #fcfbf8 !important;
+  transform: none !important;
+}
+
+/* Circle action buttons (attach / mic) — outlined ghost */
+body:not(.sp-dark) .sp-circle-action-btn {
+  background: transparent !important;
+  border: 1px solid var(--ql-border) !important;
+  color: var(--ql-text-secondary) !important;
+  width: 34px !important;
+  height: 34px !important;
+  transition: all 0.15s ease !important;
+}
+body:not(.sp-dark) .sp-circle-action-btn:hover {
+  background: var(--ql-bg-hover) !important;
+  border-color: var(--ql-text-primary) !important;
+  color: var(--ql-text-primary) !important;
+}
+
+/* Send circle — charcoal signature button */
+body:not(.sp-dark) .sp-send-circle-btn {
+  background: var(--ql-text-primary) !important;
+  background-image: none !important;
+  border: none !important;
+  color: #fcfbf8 !important;
+  width: 40px !important;
+  height: 40px !important;
+  box-shadow: var(--ql-shadow-inset), 0 4px 12px rgba(28,28,28,0.12) !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+}
+body:not(.sp-dark) .sp-send-circle-btn:hover {
+  transform: translateY(-1px) !important;
+  background: #000 !important;
+  box-shadow: var(--ql-shadow-inset), 0 6px 16px rgba(28,28,28,0.18) !important;
+}
+body:not(.sp-dark) .sp-send-circle-btn:disabled {
+  opacity: 0.35 !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+/* Advanced toggle — flat cream chip */
+body:not(.sp-dark) .sp-advanced-toggle {
+  background: var(--ql-bg-surface) !important;
+  border: 1px solid var(--ql-border) !important;
+  border-radius: 10px !important;
+  padding: 9px 12px !important;
+}
+body:not(.sp-dark) .sp-advanced-toggle:hover {
+  background: var(--ql-bg-hover) !important;
+  border-color: var(--ql-border-hover) !important;
+}
+body:not(.sp-dark) .sp-advanced-sparkle-badge {
+  background: var(--ql-text-primary) !important;
+  color: #fcfbf8 !important;
+  width: 20px !important;
+  height: 20px !important;
+}
+body:not(.sp-dark) .sp-advanced-toggle-label {
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  color: var(--ql-text-primary) !important;
+}
+body:not(.sp-dark) .sp-advanced-panel {
+  background: var(--ql-bg) !important;
+  border-color: var(--ql-border) !important;
+  border-radius: 0 0 10px 10px !important;
+}
+
+/* Chat action bar — clean divider */
+body:not(.sp-dark) .sp-chat-actions {
+  border-top: 1px solid var(--ql-border) !important;
+  padding-top: 12px !important;
+  gap: 8px !important;
+}
+body:not(.sp-dark) .sp-chat-clear {
+  background: transparent !important;
+  border: 1px solid rgba(168,50,50,0.25) !important;
+  color: #a83232 !important;
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+  padding: 8px 12px !important;
+}
+body:not(.sp-dark) .sp-chat-clear:hover {
+  background: rgba(168,50,50,0.06) !important;
+  border-color: #a83232 !important;
+}
+body:not(.sp-dark) .sp-chat-count {
+  color: var(--ql-text-muted) !important;
+  font-size: 10px !important;
+}
+
+/* Attach preview — cream chip */
+body:not(.sp-dark) .sp-attach-item {
+  background: var(--ql-bg-surface) !important;
+  border: 1px solid var(--ql-border) !important;
+  border-radius: 8px !important;
+  color: var(--ql-text-secondary) !important;
+}
+body:not(.sp-dark) .sp-attach-btn {
+  background: transparent !important;
+  border: 1px dashed rgba(28,28,28,0.25) !important;
+  color: var(--ql-text-muted) !important;
+  border-radius: 8px !important;
+}
+body:not(.sp-dark) .sp-attach-btn:hover {
+  background: var(--ql-bg-hover) !important;
+  border-color: var(--ql-text-primary) !important;
+  color: var(--ql-text-primary) !important;
+}
+
+/* Date divider label — serif accent */
+body:not(.sp-dark) .sp-chat-date-label {
+  font-family: 'Instrument Serif', ui-serif, Georgia, serif !important;
+  font-weight: 400 !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  font-size: 11px !important;
+  font-style: italic;
+  background: transparent !important;
+  border: none !important;
+  color: var(--ql-text-muted) !important;
+}
+
+/* Status row — subtle */
+body:not(.sp-dark) .sp-status-row {
+  font-size: 10.5px !important;
+  color: var(--ql-text-muted) !important;
+}
+body:not(.sp-dark) .sp-status-dot {
+  background-color: #4a7c59 !important;
+  box-shadow: 0 0 6px rgba(74,124,89,0.5) !important;
+}
