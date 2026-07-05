@@ -1,12 +1,12 @@
 /* Lovable Powerkits – Premium UI v6.0 */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap');
 
 /* ===== MAIN CONTAINER ===== */
 #ql-floating {
   position: fixed;
   width: 400px;
   z-index: 999999999;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   border-radius: var(--ql-radius);
   overflow: hidden;
   background: var(--ql-bg);
@@ -704,7 +704,7 @@
   background: var(--ql-bg-surface);
   color: var(--ql-text-primary);
   font-size: 13px;
-  font-family: 'Inter', -apple-system, sans-serif;
+  font-family: 'Instrument Sans', -apple-system, sans-serif;
   transition: border-color var(--ql-transition), box-shadow var(--ql-transition);
   box-sizing: border-box;
   outline: none;
@@ -954,7 +954,7 @@
   background: var(--ql-bg-surface);
   color: var(--ql-text-primary);
   font-size: 13px;
-  font-family: 'Inter', -apple-system, sans-serif;
+  font-family: 'Instrument Sans', -apple-system, sans-serif;
   transition: all var(--ql-transition);
   box-sizing: border-box;
   outline: none;
@@ -1697,14 +1697,14 @@
   color: var(--ql-accent-hover);
   font-size: 13px;
   font-weight: 600;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Instrument Sans', sans-serif;
   text-align: center;
   letter-spacing: 0.02em;
 }
 .ql-shield-overlay-sub {
   color: var(--ql-text-muted);
   font-size: 10px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Instrument Sans', sans-serif;
 }
 @keyframes ql-shield-pulse {
   0%, 100% { border-color: var(--ql-border-hover); box-shadow: 0 0 40px -8px var(--ql-accent-glow); }
@@ -1886,7 +1886,7 @@
   color: #fff;
   font-size: 10px;
   font-weight: 700;
-  font-family: 'Inter', -apple-system, sans-serif;
+  font-family: 'Instrument Sans', -apple-system, sans-serif;
   padding: 3px 10px;
   border-radius: 12px;
   box-shadow: 0 2px 12px var(--ql-accent-glow);
@@ -1912,7 +1912,7 @@
   color: var(--ql-accent-hover);
   font-size: 12px;
   font-weight: 600;
-  font-family: 'Inter', -apple-system, sans-serif;
+  font-family: 'Instrument Sans', -apple-system, sans-serif;
   cursor: pointer;
   transition: all 0.2s ease;
   z-index: 99999;
@@ -1990,7 +1990,7 @@
   border-radius: 12px;
   font-size: 13px;
   font-weight: 600;
-  font-family: 'Inter', -apple-system, sans-serif;
+  font-family: 'Instrument Sans', -apple-system, sans-serif;
   opacity: 0;
   transition: all 0.3s ease;
   pointer-events: none;
@@ -2028,7 +2028,7 @@
   pointer-events: none;
 }
 .ql-drag-overlay-inner {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Instrument Sans', sans-serif;
   font-size: 14px;
   font-weight: 600;
   color: var(--ql-accent-hover);
