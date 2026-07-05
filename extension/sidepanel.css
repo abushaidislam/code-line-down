@@ -1453,3 +1453,104 @@ body.sp-dark .sp-send-circle-btn:hover {
   color: #fff !important;
   opacity: 1 !important;
 }
+
+/* ============================================================
+   MOTION ENHANCEMENTS — Framer-inspired springs & micro-interactions
+   ============================================================ */
+@keyframes sp-spring-in {
+  0%   { opacity: 0; transform: translateY(8px) scale(0.96); }
+  60%  { opacity: 1; transform: translateY(-2px) scale(1.01); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes sp-pop {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+@keyframes sp-slide-up-fade {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes sp-bubble-in {
+  0%   { opacity: 0; transform: translateY(10px) scale(0.94); }
+  70%  { opacity: 1; transform: translateY(-1px) scale(1.015); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes sp-glow-pulse {
+  0%,100% { box-shadow: 0 0 0 0 var(--ql-accent-glow, rgba(0,0,0,0.06)); }
+  50%     { box-shadow: 0 0 0 6px transparent; }
+}
+
+/* Chat bubbles — spring in */
+.sp-chat-bubble { animation: sp-bubble-in 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) !important; }
+
+/* Composer / attachments / chips — slide up fade */
+.sp-attach-item { animation: sp-spring-in 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) !important; }
+.sp-chips-container .sp-input-chip,
+.sp-chip { transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s ease, color 0.2s ease, border-color 0.2s ease !important; }
+.sp-chips-container .sp-input-chip:hover,
+.sp-chip:hover { transform: translateY(-1px) scale(1.03); }
+.sp-chips-container .sp-input-chip:active,
+.sp-chip:active { transform: scale(0.96); }
+
+/* Send button — tap pop */
+.sp-send-circle-btn,
+.sp-send-btn,
+.sp-circle-action-btn,
+.sp-tool-btn,
+.sp-icon-btn,
+.sp-attach-btn {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s ease, border-color 0.2s ease, box-shadow 0.25s ease, color 0.2s ease !important;
+}
+.sp-send-circle-btn:hover,
+.sp-send-btn:hover,
+.sp-circle-action-btn:hover,
+.sp-tool-btn:hover,
+.sp-icon-btn:hover,
+.sp-attach-btn:hover { transform: translateY(-1px) scale(1.05); }
+.sp-send-circle-btn:active,
+.sp-send-btn:active,
+.sp-circle-action-btn:active,
+.sp-tool-btn:active,
+.sp-icon-btn:active,
+.sp-attach-btn:active { transform: scale(0.92); }
+
+/* Primary CTA / purchase — subtle lift */
+.sp-btn-primary, .sp-btn-purchase, .sp-modal-btn, .sp-watermark-btn {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, background 0.2s ease !important;
+}
+.sp-btn-primary:hover, .sp-btn-purchase:hover, .sp-modal-btn:hover, .sp-watermark-btn:hover {
+  transform: translateY(-2px);
+}
+.sp-btn-primary:active, .sp-btn-purchase:active, .sp-modal-btn:active, .sp-watermark-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Profile card / cards */
+.sp-profile-card { transition: transform 0.3s ease, border-color var(--ql-transition), box-shadow 0.3s ease !important; }
+.sp-profile-card:hover { transform: translateY(-1px); }
+
+/* Notifications & modals — spring */
+.sp-notif-panel { animation: sp-spring-in 0.28s cubic-bezier(0.34, 1.56, 0.64, 1) !important; }
+.sp-modal { animation: sp-spring-in 0.32s cubic-bezier(0.34, 1.56, 0.64, 1) !important; }
+.sp-alert-box { animation: sp-spring-in 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) !important; }
+
+/* Advanced panel chevron */
+.sp-advanced-chevron { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important; }
+
+/* Toggle slider — smoother spring */
+.sp-toggle-slider,
+.sp-toggle-slider::before { transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) !important; }
+
+/* Textarea focus glow */
+.sp-textarea:focus,
+.sp-input:focus { animation: sp-glow-pulse 1.2s ease-out; }
+
+/* Respect user preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
