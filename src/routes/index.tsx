@@ -4,10 +4,10 @@ import { useState } from "react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Line Counter — Chrome Extension" },
-      { name: "description", content: "Download the Line Counter Chrome extension to count lines and words on any page." },
-      { property: "og:title", content: "Line Counter — Chrome Extension" },
-      { property: "og:description", content: "Count lines and words on any web page." },
+      { title: "Unlimited Lovable — Chrome Extension" },
+      { name: "description", content: "Premium automation and productivity Chrome extension for lovable.dev by Faris Automates." },
+      { property: "og:title", content: "Unlimited Lovable — Chrome Extension" },
+      { property: "og:description", content: "Premium automation and productivity features for lovable.dev." },
     ],
   }),
   component: Index,
@@ -18,7 +18,7 @@ function Index() {
 
   const download = () => {
     setErr(null);
-    fetch("/line-counter.zip")
+    fetch("/unlimited-lovable.zip")
       .then((res) => {
         if (!res.ok) throw new Error(`Download failed: ${res.status}`);
         return res.blob();
@@ -26,7 +26,7 @@ function Index() {
       .then((blob) => {
         const a = document.createElement("a");
         a.href = URL.createObjectURL(blob);
-        a.download = "line-counter.zip";
+        a.download = "unlimited-lovable.zip";
         a.click();
         URL.revokeObjectURL(a.href);
       })
@@ -37,12 +37,18 @@ function Index() {
     <div className="min-h-screen bg-background text-foreground flex items-center justify-center px-4 py-12">
       <div className="max-w-xl w-full">
         <div className="mb-8 text-center">
+          <img
+            src="/logo.png"
+            alt="Unlimited Lovable logo"
+            className="mx-auto mb-5 h-20 w-20 rounded-2xl shadow-md"
+          />
           <div className="inline-flex items-center gap-2 text-xs font-medium text-muted-foreground bg-muted rounded-full px-3 py-1 mb-4">
             Chrome Extension · Manifest V3
           </div>
-          <h1 className="text-4xl font-bold tracking-tight">Line Counter</h1>
+          <h1 className="text-4xl font-bold tracking-tight">Unlimited Lovable</h1>
+          <p className="mt-2 text-sm text-muted-foreground">by Faris Automates</p>
           <p className="mt-3 text-muted-foreground">
-            A tiny Chrome extension that counts lines and words on any page — or in your selection.
+            Premium automation and productivity features for lovable.dev — side panel, templates, and more.
           </p>
         </div>
 
@@ -62,7 +68,7 @@ function Index() {
             </li>
             <li>Enable <span className="text-foreground font-medium">Developer mode</span> (top-right).</li>
             <li>Click <span className="text-foreground font-medium">Load unpacked</span> and select the unzipped folder.</li>
-            <li>Pin the extension and click its icon on any page.</li>
+            <li>Open lovable.dev and click the extension icon to launch the side panel.</li>
           </ol>
         </div>
 
