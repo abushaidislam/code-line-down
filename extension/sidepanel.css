@@ -651,3 +651,76 @@ body {
   letter-spacing: 0.02em;
   box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.02);
 }
+
+/* ============================================================
+   Lovable rebrand overrides — warm cream + charcoal
+   Neutralises legacy purple/pink/dark-glass rules with tokens
+   ============================================================ */
+.sp-header {
+  background: var(--ql-bg-surface) !important;
+  border-bottom: 1px solid var(--ql-border) !important;
+}
+.sp-brand-text { color: var(--ql-text-primary) !important; font-weight: 600 !important; }
+.sp-brand-subtitle { color: var(--ql-text-muted) !important; }
+.sp-badge, .sp-pro-badge {
+  background: var(--ql-text-primary) !important;
+  color: var(--ql-bg-surface) !important;
+  font-weight: 600 !important;
+  border-radius: 9999px !important;
+  padding: 3px 10px !important;
+  box-shadow: var(--ql-shadow-inset) !important;
+}
+.sp-icon-btn {
+  background: var(--ql-bg-surface) !important;
+  border: 1px solid var(--ql-border) !important;
+  color: var(--ql-text-secondary) !important;
+}
+.sp-icon-btn:hover {
+  background: var(--ql-bg-hover) !important;
+  color: var(--ql-text-primary) !important;
+  border-color: var(--ql-border-hover) !important;
+}
+.sp-notif-badge { background: #a83232 !important; box-shadow: 0 0 0 2px var(--ql-bg-surface) !important; }
+
+.sp-card {
+  background: var(--ql-bg-surface) !important;
+  border: 1px solid var(--ql-border) !important;
+  border-radius: 16px !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: var(--ql-shadow) !important;
+}
+
+.sp-tabs { background: var(--ql-bg) !important; border: 1px solid var(--ql-border) !important; border-radius: 9999px !important; }
+.sp-tab { border-radius: 9999px !important; color: var(--ql-text-muted) !important; }
+.sp-tab:hover { background: var(--ql-bg-hover) !important; color: var(--ql-text-primary) !important; }
+.sp-tab.sp-tab-active {
+  background: var(--ql-text-primary) !important;
+  color: var(--ql-bg-surface) !important;
+  box-shadow: var(--ql-shadow-inset) !important;
+}
+
+.sp-textarea-wrapper {
+  background: var(--ql-bg) !important;
+  border: 1px solid var(--ql-border) !important;
+  border-radius: 12px !important;
+}
+
+.sp-btn-primary, .sp-modal-btn {
+  background: var(--ql-text-primary) !important;
+  color: var(--ql-bg-surface) !important;
+  box-shadow: var(--ql-shadow-inset) !important;
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+}
+.sp-btn-primary:hover, .sp-modal-btn:hover { opacity: 0.85; transform: none !important; }
+
+.sp-footer { background: transparent !important; }
+.sp-footer-badge {
+  background: var(--ql-bg) !important;
+  border: 1px solid var(--ql-border) !important;
+  color: var(--ql-text-muted) !important;
+}
+
+/* Ambient orbs / meteors — soften on cream */
+.sp-orb, .sp-meteors, .sp-grid { opacity: 0.4 !important; mix-blend-mode: multiply !important; }
